@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Generador QR de Color</title>
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    </head>
+    <body>
+        <div class="bttn">
+            <button class="bttn-element-ini" onclick=app.loadPicture()>INICIAR</button>
+            <button class="bttn-element" onclick=app.filters.darkAlpha()>ALPHA OSCUROS</button>
+            <button class="bttn-element" onclick=app.filters.lightAlpha()>ALPHA CLAROS</button>
+            <button class="bttn-element" onclick=app.filters.blackToColor()>CAMBIAR COLOR</button>
+            <button class="bttn-element-ini" onclick=app.save()>DESCARGAR</button>
+        </div>
+        <div class="selector" id="src-file1">
+            <div class="formulario">
+                <input type="color" id="input-color">
+                <form action="" id="formulario" class="formulario">
+                    <input type="text" id="link" placeholder="Escribe el link para el Código QR...">
+                    <button class="btn">GENERAR QR</button>
+                </form>
+            </div>
+        </div>
+        <div id="main">
+            <canvas id="canvas"></canvas>
+            <div id="contenedorQR" hidden></div>
+        </div>
+        <div class="input-image">
+        </div>
+        <div id="instrucciones">
+            <ul id="titulo-lista">Pasos para generar Código QR de Color:</ul>
+                <li class="elemento-lista">Hacé click en Iniciar.</li>
+                <li class="elemento-lista">Seleccioná el Color que querés.</li>
+                <li class="elemento-lista">Ingresá el link para el código QR.</li>
+                <li class="elemento-lista">Hacé click en <b>GENERAR QR.</b></li>
+                <li class="elemento-lista">Si hacés click en Alpha Oscuros, lo negro del QR se vuelve transparente.</li>
+                <li class="elemento-lista">Si hacés click en Alpha Claros, lo blanco del QR se vuelve transparente.</li>
+                <li class="elemento-lista">Si hacés click en Cambiar Color, lo negro del QR será del color que seleccionaste.</li>
+                <li class="elemento-lista">Finalmente, hacé click en descargar.</li>
+
+        </div>
+        <script defer type="text/javascript" src="./src/main.js"></script>
+    </body>
+</html>
